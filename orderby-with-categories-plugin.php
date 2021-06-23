@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Orderby with Categories
+Plugin Name: Orderby with Categories for Woocommerce by RMcC
 Plugin URI: #
 Description: Adds categories to the orderby/sorting filters on the shop page
 Version: 1.0.0

@@ -11,7 +11,8 @@ class OrderbyWithCategories extends Timber {
     add_filter('timber/twig', array($this, 'add_to_twig'));
     add_filter('timber/context', array($this, 'add_to_context'));
     
-    remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+    // after plugins are loaded, do the checkout stuff. this is so other plugins have a chance to do their stuff first, including Woo! some actions require this
+    add_action('plugins_loaded', array($this, 'on_plugins_loaded'));
     
     // enqueue plugin assets
     add_action('wp_enqueue_scripts', array($this, 'orderby_with_categories_assets'));
@@ -24,6 +25,11 @@ class OrderbyWithCategories extends Timber {
       'orderby-with-categories',
       ORDERBY_WITH_CATEGORIES_URL . 'public/css/orderby-with-categories.css'
     );
+  }
+  
+  // after plugins are loaded, do the checkout stuff. this is so other plugins have a chance to do their stuff first, including Woo!
+  public function on_plugins_loaded() {
+    remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
   }
   
   public function add_to_twig($twig) { 
