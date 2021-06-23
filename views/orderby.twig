@@ -1,0 +1,48 @@
+{# translation-ready, escaped, formatted, semantic #}
+<form class="uk-form-stacked uk-margin-medium-bottom woocommerce-ordering uk-position-relative" method="get" data-template="orderby.twig">
+
+	<div class="uk-child-width-1-2 uk-child-width-auto@s uk-grid-small" uk-grid="uk-grid">
+		
+		{% if cats %}
+			<div class="filtering-category">
+				<label class="uk-form-label uk-text-bold uk-text-emphasis uk-text-uppercase" for="form-stacked-select">{{ _x('Filter', 'Shop filters', 'orderby-with-categories')|e('esc_html') }}</label>
+				<div class="uk-form-controls uk-position-relative">
+					<select name="product_cat" class="uk-select uk-form-width-medium product_cats" id="form-stacked-select" aria-label="{{ _x('Filter', 'Shop filters', 'orderby-with-categories')|e('esc_html') }}">
+						{% if not app.request.query.get('product_cat') %}
+							<option selected="selected" disabled hidden>{{ _x('Select a category', 'Shop filters', 'orderby-with-categories')|e('esc_html') }}</option>
+						{% endif %}
+						{% for cat in cats %}
+							<option value="{{cat.slug|e('esc_html')}}" {{ (request.get.product_cat == cat.slug) ? 'selected' : '' }}>
+								{{cat.name|e('esc_html')}}
+							</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+		{% endif %}
+		
+		<div class="filtering-sorting">
+			<label class="uk-form-label uk-text-bold uk-text-emphasis uk-text-uppercase" for="form-stacked-select">{{ _x('Sorting', 'Shop filters', 'orderby-with-categories')|e('esc_html') }}</label>
+			<div class="uk-form-controls">
+				<select name="orderby" class="uk-select uk-form-width-medium orderby" aria-label="{{ _x('Shop order', 'Shop filters', 'orderby-with-categories')|e('esc_html') }}">
+					{% for id, name in catalog_orderby_options %}
+						<option value="{{id|e('esc_html')}}" {{fn('selected', orderby, id)}}>{{name|e('esc_html')}}</option>
+					{% endfor %}
+				</select>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="filtering-reset">
+		{% if request.get.product_cat or request.get.orderby %}
+			<a class="uk-text-small" href="{{ fn('remove_query_arg', fn('array_keys', request.get))|e('esc_url') }}">
+				<i class="far fa-times-circle"></i> {{ _x('Reset Filters', 'Shop filters', 'orderby-with-categories')|e('esc_html') }}
+			</a>
+		{% endif %}
+	</div>
+
+	<input type="hidden" name="paged" value="1"/>
+	{{ fn('wc_query_string_form_fields', null, ['orderby', 'submit', 'paged', 'product-page', 'product_cat']) }}
+
+</form>
