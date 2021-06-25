@@ -19,6 +19,7 @@ defined('ABSPATH') || exit;
 // define some constants
 if (!defined('ORDERBY_WITH_CATEGORIES_PATH')) define('ORDERBY_WITH_CATEGORIES_PATH', plugin_dir_path( __FILE__ ));
 if (!defined('ORDERBY_WITH_CATEGORIES_URL')) define('ORDERBY_WITH_CATEGORIES_URL', plugin_dir_url( __FILE__ ));
+if (!defined('ORDERBY_WITH_CATEGORIES_BASE')) define('ORDERBY_WITH_CATEGORIES_BASE', dirname(plugin_basename( __FILE__ )));
 
 // require the composer autoloader
 if (file_exists($composer_autoload = __DIR__.'/vendor/autoload.php')) require_once $composer_autoload;
