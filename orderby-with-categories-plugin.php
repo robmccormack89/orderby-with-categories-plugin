@@ -2,7 +2,7 @@
 /*
 Plugin Name: Orderby with Categories for Woocommerce by RMcC
 Plugin URI: #
-Description: Adds categories to the orderby/sorting filters on the shop page
+Description: Adds a category filter dropddown to the orderby/sorting filters on the top of the shop page. This plugin is translation-ready.
 Version: 1.0.0
 Author: robmccormack89
 Author URI: #
