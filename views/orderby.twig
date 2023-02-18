@@ -7,7 +7,7 @@
 				<label class="uk-form-label" for="form-stacked-select">{{ _x('Categories', 'Categories label', 'orderby-with-categories')|e('esc_html') }}</label>
 				<div class="uk-form-controls uk-position-relative">
 					<select name="product_cat" class="product_cats uk-select uk-form-width-medium uk-form-small" id="form-stacked-select" aria-label="{{ _x('Categories', 'Categories label', 'orderby-with-categories')|e('esc_html') }}">
-						{% if not app.request.query.get('product_cat') %}
+						{% if not request.query.get('product_cat') %}
 							<option selected="selected" disabled hidden>{{ _x('Select a category', 'Shop filters', 'orderby-with-categories')|e('esc_html') }}</option>
 						{% endif %}
 						{% for cat in cats %}
