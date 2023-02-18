@@ -1,4 +1,4 @@
-<form class="woocommerce-ordering uk-form-stacked uk-margin-medium-bottom uk-position-relative" method="get">
+<form class="woocommerce-ordering uk-form-stacked uk-position-relative" method="get">
 
 	<div class="uk-child-width-1-2 uk-child-width-auto@s uk-grid-small" uk-grid>
 
@@ -6,7 +6,7 @@
 			<div class="uk-category">
 				<label class="uk-form-label" for="form-stacked-select">{{ _x('Categories', 'Categories label', 'orderby-with-categories')|e('esc_html') }}</label>
 				<div class="uk-form-controls uk-position-relative">
-					<select name="product_cat" class="product_cats uk-select uk-form-width-medium uk-form-small" id="form-stacked-select" aria-label="{{ _x('Categories', 'Categories label', 'orderby-with-categories')|e('esc_html') }}">
+					<select name="product_cat" class="product_cats uk-select uk-form-width-medium" id="form-stacked-select" aria-label="{{ _x('Categories', 'Categories label', 'orderby-with-categories')|e('esc_html') }}">
 						{% if not request.query.get('product_cat') %}
 							<option selected="selected" disabled hidden>{{ _x('Select a category', 'Shop filters', 'orderby-with-categories')|e('esc_html') }}</option>
 						{% endif %}
@@ -23,7 +23,7 @@
 		<div class="filtering-sorting">
 			<label class="uk-form-label" for="form-stacked-select">{{ _x('Orderby', 'Orderby label', 'orderby-with-categories')|e('esc_html') }}</label>
 			<div class="uk-form-controls">
-				<select name="orderby" class="orderby uk-select uk-form-width-medium uk-form-small" aria-label="{{ _x('Orderby', 'Orderby label', 'orderby-with-categories')|e('esc_html') }}">
+				<select name="orderby" class="orderby uk-select uk-form-width-medium" aria-label="{{ _x('Orderby', 'Orderby label', 'orderby-with-categories')|e('esc_html') }}">
 					{% for id, name in catalog_orderby_options %}
 						<option value="{{id|e('esc_html')}}" {{fn('selected', orderby, id)}}>{{name|e('esc_html')}}</option>
 					{% endfor %}
