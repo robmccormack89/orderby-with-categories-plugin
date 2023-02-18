@@ -1,4 +1,4 @@
-# Copyright (C) 2021 orderby-with-categories
+# Copyright (C) 2023 orderby-with-categories
 # This file is distributed under the same license as the orderby-with-categories package.
 msgid ""
 msgstr ""
@@ -13,27 +13,22 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: views/temp/orderby.php:8, views/temp/orderby.php:10
-msgctxt "Shop filters"
-msgid "Filter"
+#: views/temp/orderby.php:7, views/temp/orderby.php:9
+msgctxt "Categories label"
+msgid "Categories"
 msgstr ""
 
-#: views/temp/orderby.php:12
+#: views/temp/orderby.php:11
 msgctxt "Shop filters"
 msgid "Select a category"
 msgstr ""
 
-#: views/temp/orderby.php:25
-msgctxt "Shop filters"
-msgid "Sorting"
-msgstr ""
-
-#: views/temp/orderby.php:27
-msgctxt "Shop filters"
-msgid "Shop order"
+#: views/temp/orderby.php:24, views/temp/orderby.php:26
+msgctxt "Orderby label"
+msgid "Orderby"
 msgstr ""
 
 #: views/temp/orderby.php:40
-msgctxt "Shop filters"
-msgid "Reset Filters"
+msgctxt "Reset text"
+msgid "Reset"
 msgstr ""

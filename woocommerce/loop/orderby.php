@@ -34,7 +34,6 @@ $cats_args = array(
   'parent' => 0,
 );
 $context['cats'] = get_terms($cats_args);
-
 $context['catalog_orderby_options'] = $catalog_orderby_options;
 $context['orderby'] = $orderby;
 
