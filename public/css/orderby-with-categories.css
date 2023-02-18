@@ -1,3 +1,9 @@
-.woocommerce select.orderby.uk-form-small {
+.woocommerce-ordering select.orderby.uk-form-small {
     font-size: .875rem;;
+}
+.woocommerce-ordering .uk-form-label {
+    font-size: 1rem;
+}
+.woocommerce-ordering .uk-form-label.uk-text-small {
+    font-size: .875rem;
 }
